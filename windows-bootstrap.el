@@ -1,2 +1,2 @@
-(setq default-directory "C:/dev/nixos")
-(load-file "C:/dev/nixos/emacs.el")
+(cd "C:\\dev\\emacs-config")
+(load-file "C:\\dev\\emacs-config\\emacs.el")
