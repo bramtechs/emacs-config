@@ -79,7 +79,7 @@
 
 (if (eq system-type 'darwin)
     (set-font-size 16)
-  (set-font-size 15))
+  (set-font-size 13))
 
 ;; reduce some friction
 (setq use-short-answers t)
@@ -161,7 +161,12 @@
          (typescript-mode . lsp))
   :commands lsp)
 
-(global-prettier-mode t)
+;; Prettier for webdev
+(defun enable-prettier-for-specific-modes ()
+  (when (member major-mode '(js-mode js2-mode typescript-mode json-mode html-mode))
+    (prettier-mode 1)))
+
+(add-hook 'after-change-major-mode-hook #'enable-prettier-for-specific-modes)
 
 ;; pdf support
 ;; (pdf-tools-install)
@@ -403,7 +408,7 @@ SOFTWARE."))
 
   (when (and (buffer-file-name)
              (not (file-exists-p (buffer-file-name)))
-             (or (string-match "\\.\\(c\\|cpp\\|h\\|hpp\\|cc\\|hh\\)\\'" (buffer-file-name))))
+             (or (string-match "\\.\\(c\\|cpp\\|h\\|hpp\\|cc\\|hh\\|java\\)\\'" (buffer-file-name))))
     ;; Insert a header if the file is new
     (add-copyright)
 
