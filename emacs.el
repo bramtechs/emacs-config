@@ -142,23 +142,6 @@
     (global-set-key (kbd "S-<end>") (lambda () (interactive)
                                       (push-mark)
                                       (move-end-of-line)))))
-;; LSP for webdev
-(use-package lsp-mode
-  :init (setq lsp-keymap-prefix "C-l")
-  :ensure t
-  :hook ((js-mode . lsp)
-         (typescript-mode . lsp))
-  :commands lsp)
-
-;; Prettier for webdev
-(defun enable-prettier-for-specific-modes ()
-  (when (member major-mode '(js-mode js2-mode typescript-mode json-mode html-mode))
-    (prettier-mode 1)))
-
-(add-hook 'after-change-major-mode-hook #'enable-prettier-for-specific-modes)
-
-;; pdf support
-;; (pdf-tools-install)
 
 ;; org mode
 (setq org-support-shift-select 't)
@@ -248,6 +231,18 @@
 ;; map zoom to sane bindings
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
+
+;; configure text font and size
+(defun set-global-font-size (size)
+  "Set the global font size while keeping the current font family."
+  (interactive "nFont size: ")
+  (let* ((font (face-attribute 'default :font))
+         (family (font-get font :family)))
+    (set-frame-font (format "%s-%d" family size) nil t)))
+
+(if (eq system-type 'darwin)
+    (set-global-font-size 16)
+  (set-global-font-size 12))
 
 ;; shorthands
 (defun mwb ()

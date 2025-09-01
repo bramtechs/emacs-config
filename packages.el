@@ -11,7 +11,6 @@
                      docker-compose-mode
                      dockerfile-mode
                      editorconfig
-                     elcord
                      exec-path-from-shell
                      fsharp-mode
                      gcmh
@@ -28,19 +27,16 @@
                      magit
                      make-color
                      markdown-mode
-                     markdown-preview-mode
                      multiple-cursors
                      oblivion-theme
                      obsidian-theme
                      pdf-tools
                      php-mode
-                     prettier
                      python-mode
                      quelpa
                      rainbow-mode
                      shader-mode
                      typescript-mode
-                     vue-mode
                      yaml
                      ))
 
