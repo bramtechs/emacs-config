@@ -388,6 +388,10 @@ SOFTWARE."))
 
   (c-set-offset 'innamespace 0)
 
+  (if (eq system-type 'berkeley-unix)
+        ;; GhostBSD using fish for some stupid reason and I can't be
+        ;; bothered how to edit PATH properly
+      (setq clang-format-executable "/usr/local/llvm20/bin/clang-format"))
   (clang-format-on-save-mode t)
 
   (when (and (buffer-file-name)

@@ -13,7 +13,6 @@
                      editorconfig
                      exec-path-from-shell
                      fsharp-mode
-                     gcmh
                      git
                      github-dark-vscode-theme
                      groovy-mode
@@ -26,13 +25,11 @@
                      lua-mode
                      magit
                      make-color
-                     markdown-mode
                      multiple-cursors
                      oblivion-theme
                      obsidian-theme
                      pdf-tools
                      php-mode
-                     python-mode
                      quelpa
                      rainbow-mode
                      shader-mode
