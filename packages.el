@@ -1,5 +1,4 @@
 (setq package-list '(
-		     exwm
 	             auto-complete
   	             nix-mode
                      aggressive-indent
