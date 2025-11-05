@@ -408,7 +408,11 @@ SOFTWARE."))
 
     ;; Move the cursor to the end of the header
     (goto-char (point-max))
-    (message "Added license text for this file")))
+    (message "Added license text for this file"))
+
+  (setq tab-width 4)
+  (setq standard-indent 4)
+  (setq c-basic-offset 4))
 
 ;; Add the function to C and C++ mode hooks
 (add-hook 'c-mode-hook 'my-cc-mode-setup)
