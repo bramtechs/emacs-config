@@ -180,12 +180,13 @@
 ;; fix weird indentation in INI-files
 (add-hook 'conf-mode (lambda (electric-indent-mode nil)))
 
+;; FIXME: Lags like hell all of a sudden for some reason? Disabling it.
 ;; auto remove trailing whitespace
-(add-hook 'before-save-hook 'my-prog-nuke-trailing-whitespace)
-
-(defun my-prog-nuke-trailing-whitespace ()
-  (when (derived-mode-p 'prog-mode)
-    (delete-trailing-whitespace)))
+;; (add-hook 'before-save-hook 'my-prog-nuke-trailing-whitespace)
+;;
+;;(defun my-prog-nuke-trailing-whitespace ()
+;;  (when (derived-mode-p 'prog-mode)
+;;    (delete-trailing-whitespace)))
 
 ;; etags
 (setq tags-revert-without-query 1)
