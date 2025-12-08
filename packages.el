@@ -34,7 +34,7 @@
                      shader-mode
                      typescript-mode
                      yaml
-                     elcord
+                     rg
                      ))
 
 (setq package-user-dir "~/.emacs.d/packages")
