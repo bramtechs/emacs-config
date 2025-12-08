@@ -45,6 +45,9 @@
 (setq ring-bell-function 'ignore)
 (setq set-message-beep 'silent)
 
+;; Treat C3 as C
+(add-to-list 'auto-mode-alist '("\\.c3\\'" . c-mode))
+
 ;; Tab size is 4 spaces
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
@@ -432,21 +435,3 @@ SOFTWARE."))
 
 (load-file "gemini.el")
 (message "Loaded entire config successfully")
-
-;; larp-mode
-(elcord-mode)
-(setq elcord-icon-base '"https://raw.githubusercontent.com/bramtechs/elcord/own/icons/")
-(setq elcord-mode-icon-alist (append elcord-mode-icon-alist
-                                     '((janet-mode . "janet-mode_icon")
-                                       (asm-mode . "assembly-mode_icon")
-                                       (nasm-mode . "assembly-mode_icon")
-                                       (d-mode . "d-mode_icon"))))
-
-(setq elcord-display-elapsed nil)
-(setq elcord-quiet 't)
-(setq elcord-refresh-rate 6)
-(setq elcord-idle-message "Howling at the moon...")
-
-(defun elcord--editor-icon ()
-  "The icon to use to represent the current editor."
-  "https://raw.githubusercontent.com/bramtechs/emacs-config/main/elcord/icon-invert-skew.png")
