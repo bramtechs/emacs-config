@@ -28,6 +28,12 @@
 ;; switch to header
 (global-set-key (kbd "C-x <return>") 'ff-find-other-file)
 
+;; autocomplete word
+(global-set-key (kbd "C-<tab>") 'dabbrev-expand)
+
+;; compile key
+(global-set-key (kbd "<f7>") 'compile)
+
 ;; Fix MacOS' weird Home and End keys
 (when (eq system-type 'darwin)
   (use-package emacs
