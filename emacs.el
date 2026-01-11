@@ -8,7 +8,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(load-theme 'tango-dark)
+(load-theme 'leuven-dark)
 
 (setq ring-bell-function 'ignore)
 (setq set-message-beep 'silent)
