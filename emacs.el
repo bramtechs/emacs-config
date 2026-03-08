@@ -8,7 +8,10 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(load-theme 'leuven-dark)
+(load-theme 'leuven)
+
+;; set font
+(set-frame-font "Fira Mono 12" nil t)
 
 (setq ring-bell-function 'ignore)
 (setq set-message-beep 'silent)
@@ -158,7 +161,5 @@ SOFTWARE."))
 ;; Melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
-;; and `package-pinned-packages`. Most users will not need or want to do this.
-;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+
